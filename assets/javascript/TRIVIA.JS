@@ -21,81 +21,63 @@ when timer stops shut down the game-
   // console log done
   console.log("done");*/
 
+$(document).ready(function() {
 
-//var secs = 0;
+    $("#test").click(function() {
+        alert("Hello! I am an alert box!!");
+        console.log("I got clicked");
+    });
+    var wrong;
+    var right;
+
+    /* function ScoreRight() {
+         if right == true;
+         right == 1;
+         right++;
+
+     }*/
 
 
-/*
-$("#timer").on("click", timeUp());
+    // var secs = setInterval(timer, 1000);
+    var secs = 0;
+    //secs = setInterval(timer, 1000);
 
-
-function timeUp() {
-    setTimeout(timeUp, 1000 * 15);
-    console.log("done");
-    $("#timer").append("<h2>Time's Up!</h2>");
-    console.log("time is up");
-}*/
-
-
-var secs = setInterval(timer, 1000);
-
-secs = 10;
-
-function timer() {
-
-    if (secs > 0) {
-        secs--;
-        $("#seconds").text(secs + " seconds left");
+    function timer() {
+        console.log(" timer function called")
+            // var secs = setInterval(timer, 1000);
+        if ((secs > 0) && (secs < 121)) {
+            secs--;
+            console.log(secs);
+            $("#seconds").text(secs + " seconds left");
+        } else {
+            function timeUp() {
+                // in the element with an id of time-left add an h2 saying Time's Up!
+                $("#time-left").text(" Time's Up");
+                // alert("Time's Up!");
+                console.log("done");
+            }
+        }
     }
-    if (secs < 0) {
-        alert("time up");
-    };
+    //var secs = setInterval(timer, 1000);
 
-}
+    // function timeUp() {
+    // in the element with an id of time-left add an h2 saying Time's Up!
+    // $("#time-left").text(" Time's Up");
+    // alert("Time's Up!");
+    // console.log("done");
+    // }
 
-$("#timer").on("click", timer());
+
+    // document.getElementById("timer2").innerHTML = timer();
+    $("#timer2").click(function() {
+        secs = setInterval(timer, 1000);
+        console.log(" timer function called from click");
+        secs = 120;
+
+        timer();
+
+    });
 
 
 
-/*var secs = 0;
-
-//countdown function is evoked when page is loaded 
-f$("#timer").on("click", countdown() {
-    setTimeout('Decrement()', 60);
-});
-
-//Decrement function decrement the value. 
-function Decrement() {
-
-    seconds = document.getElementById("seconds");
-
-    //Display only seconds value. 
-    if (seconds < 120) {
-        seconds.value = secs;
-    } else {
-        seconds.value = getseconds();
-    }
-    //when less than a minute remaining 
-    //changes to red 
-    if (secondss < 60) {
-
-        seconds.style.color = "red";
-    }
-    //if seconds becomes zero, 
-    //then page alert time up 
-    if (secondss < 0) {
-        alert('time up');
-
-        seconds.value = 0;
-    }
-    if seconds > 0 then seconds is decremented
-    else {
-        //  secs--;
-        setTimeout('Decrement()', 1000);
-    }
-}
-
-function getseconds() {
-    //take minutes remaining (as seconds) away  
-    //from total seconds remaining 
-    return secs - Math.round(mins * 60);*/
+}); //Do code for showing the number of seconds here
