@@ -20,6 +20,22 @@ when timer stops shut down the game-
   // in the element with an id of time-left add an h2 saying Time's Up!
   // console log done
   console.log("done");*/
+function fn1() {
+    var rd1 = document.getElementById("rd1")
+    var rd2 = document.getElementById("rd2")
+    if (rd1.checked == true) {
+        alert("boo" + rd1.value);
+        //rd2++; returns NaN
+
+
+        console.log(rd2);
+    } else if (rd2.checked == true) {
+        alert("hoo" + rd2.value);
+
+    }
+}
+
+
 
 $(document).ready(function() {
 
@@ -27,20 +43,50 @@ $(document).ready(function() {
         alert("Hello! I am an alert box!!");
         console.log("I got clicked");
     });
-    var wrong;
-    var right;
 
-    /* function ScoreRight() {
-         if right == true;
-         right == 1;
-         right++;
+    $("#timer2").click(function() {
 
-     }*/
+        secs = setInterval(timer, 1000);
+        console.log(" timer function called from click");
+        secs = 120;
+        timer();
+
+    });
+
+    //var wrong = $("#wrong").checked;
+    //var right = $("#right").checked;
 
 
-    // var secs = setInterval(timer, 1000);
+
+
+    var right = document.getElementById("#right");
+    var wrong = document.getElementById("#wrong");
     var secs = 0;
-    //secs = setInterval(timer, 1000);
+    var missing = 0;
+
+
+
+    function checked() {
+        if (right.checked == true) {
+            alert("right");
+            right++;
+        }
+        if (wrong.checked == true) {
+            wrong++;
+        } else {
+            missing++;
+        }
+
+        console.log(wrong + "answers");
+        console.log(right + "answers");
+        $("#wrongAnswers").text(wrong);
+        $("#rightAnswera").text(wrong);
+        $("#missing").text(wrong);
+    }
+
+    function reset() {
+        secs = 0;
+    }
 
     function timer() {
         console.log(" timer function called")
@@ -48,36 +94,29 @@ $(document).ready(function() {
         if ((secs > 0) && (secs < 121)) {
             secs--;
             console.log(secs);
-            $("#seconds").text(secs + " seconds left");
-        } else {
-            function timeUp() {
-                // in the element with an id of time-left add an h2 saying Time's Up!
-                $("#time-left").text(" Time's Up");
-                // alert("Time's Up!");
-                console.log("done");
-            }
+            $("#time-left").text(secs + " seconds left");
+
+        } else if (secs == 0) {
+            timeUp(0);
         }
     }
-    //var secs = setInterval(timer, 1000);
+    // having trouble stopping the timer functionc continue to call itself 
+    function timeUp() {
+        secs = 0;
+        //if (secs == 0) {
+        //  clearInterval(secs);
+        //}
+        // in the element with an id of time-left add an h2 saying Time's Up!
+        $("#time-left").text(" is Up");
+        // alert("Time's Up!");
+        console.log("done");
+    };
 
-    // function timeUp() {
-    // in the element with an id of time-left add an h2 saying Time's Up!
-    // $("#time-left").text(" Time's Up");
-    // alert("Time's Up!");
-    // console.log("done");
-    // }
 
-
-    // document.getElementById("timer2").innerHTML = timer();
-    $("#timer2").click(function() {
-        secs = setInterval(timer, 1000);
-        console.log(" timer function called from click");
-        secs = 120;
-
-        timer();
-
-    });
+    //calling the timer function on click
 
 
 
-}); //Do code for showing the number of seconds here
+
+});
+//Do code for showing the number of seconds here

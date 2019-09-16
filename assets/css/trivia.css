@@ -1,3 +1,55 @@
+header {
+    height: 35%;
+    text-align: center;
+    padding: 25px 0;
+    margin: 5px;
+    color: white;
+    background-image: url("../images/questionmarks.jpg");
+    background-repeat: repeat;
+    opacity: 10%
+}
+
+body {
+    background-color: rgb(169, 211, 211);
+}
+
+form {
+    text-align: center;
+    padding: 25px;
+    margin: 5px;
+    background-color: rgb(201, 162, 201);
+}
+
+button {
+    padding: 2px 0;
+    margin: 4px 0;
+    width: 200px;
+    height: 55px;
+}
+
+.timing {
+    padding: 25px;
+    margin: 5px;
+    background-color: rgb(108, 223, 169);
+    align-content: center;
+}
+
+.score {
+    padding: 25px;
+    margin: 5px;
+    background-color: rgb(226, 226, 164);
+}
+
+#timer2 #time-left {
+    width: 200px;
+    height: 15%;
+}
+
+h1 {
+    font-size: 56px;
+    text-align: center
+}
+
 p,
 label {
     font: 1rem 'Fira Sans', sans-serif;
