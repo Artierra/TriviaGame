@@ -1,7 +1,7 @@
 header {
     height: 35%;
     text-align: center;
-    padding: 25px 0;
+    font-size: 56px: padding: 25px 0;
     margin: 5px;
     color: white;
     background-image: url("../images/questionmarks.jpg");
@@ -9,32 +9,33 @@ header {
     opacity: 10%
 }
 
+h1 {
+    font-size: 56px;
+    text-align: center
+}
+
 body {
     background-color: rgb(169, 211, 211);
 }
 
-form {
-    text-align: center;
-    padding: 25px;
-    margin: 5px;
-    background-color: rgb(201, 162, 201);
-}
-
 button {
+    border-radius: 5%;
     padding: 2px 0;
     margin: 4px 0;
-    width: 200px;
-    height: 55px;
+    width: 100px;
+    height: 45px;
 }
 
 .timing {
+    display: flex;
+    justify-content: center;
     padding: 25px;
     margin: 5px;
-    background-color: rgb(108, 223, 169);
-    align-content: center;
+    background-color: rgb(96, 150, 194);
 }
 
 .score {
+    justify-content: center;
     padding: 25px;
     margin: 5px;
     background-color: rgb(226, 226, 164);
@@ -45,9 +46,18 @@ button {
     height: 15%;
 }
 
-h1 {
-    font-size: 56px;
-    text-align: center
+form {
+    text-align: center;
+    padding: 25px;
+    margin: 5px;
+    background-color: rgb(201, 162, 201);
+}
+
+.submit {
+    padding: 2px 0;
+    margin: 4px 0;
+    width: 100px;
+    height: 20px
 }
 
 p,

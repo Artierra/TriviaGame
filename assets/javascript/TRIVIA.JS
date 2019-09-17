@@ -35,6 +35,13 @@ function fn1() {
     }
 }
 
+var right = document.getElementById("#right");
+var wrong = document.getElementById("#wrong");
+var secs = 0;
+var missing = 0;
+var rightAnswer = 0;
+var wrongAnswer = 0;
+
 
 
 $(document).ready(function() {
@@ -50,26 +57,18 @@ $(document).ready(function() {
         console.log(" timer function called from click");
         secs = 120;
         timer();
-
     });
-
-    //var wrong = $("#wrong").checked;
-    //var right = $("#right").checked;
-
-
-
-
-    var right = document.getElementById("#right");
-    var wrong = document.getElementById("#wrong");
-    var secs = 0;
-    var missing = 0;
-
+    $("#submitAnswer").click(function() {
+        console.log("  function called fromsubmit click");
+        checked();
+    });
 
 
     function checked() {
         if (right.checked == true) {
-            alert("right");
-            right++;
+            console.log("function called")
+            for (var i = 0; i <= 10; i++)
+                right++;
         }
         if (wrong.checked == true) {
             wrong++;
@@ -80,7 +79,7 @@ $(document).ready(function() {
         console.log(wrong + "answers");
         console.log(right + "answers");
         $("#wrongAnswers").text(wrong);
-        $("#rightAnswera").text(wrong);
+        $("#rightAnswers").text(wrong);
         $("#missing").text(wrong);
     }
 
@@ -94,7 +93,7 @@ $(document).ready(function() {
         if ((secs > 0) && (secs < 121)) {
             secs--;
             console.log(secs);
-            $("#time-left").text(secs + " seconds left");
+            $("#seconds").text(secs + " seconds left");
 
         } else if (secs == 0) {
             timeUp(0);
